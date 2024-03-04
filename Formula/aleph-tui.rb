@@ -1,26 +1,40 @@
 class AlephTui < Formula
   desc "A text user interface for Aleph"
-  version "0.2.0"
+  version "0.3.0"
   on_macos do
     on_arm do
-      url "https://github.com/stchris/aleph-tui/releases/download/v0.2.0/aleph-tui-aarch64-apple-darwin.tar.xz"
-      sha256 "bc49dc681537f2ee7851bca46d3ee864d4b619207ee294429c69670e10b99456"
+      url "https://github.com/stchris/aleph-tui/releases/download/v0.3.0/aleph-tui-aarch64-apple-darwin.tar.xz"
+      sha256 "82c95cec36ed280cdb07d660c59d27c4038c8228c0b81f9e536d83232b48fb04"
     end
     on_intel do
-      url "https://github.com/stchris/aleph-tui/releases/download/v0.2.0/aleph-tui-x86_64-apple-darwin.tar.xz"
-      sha256 "eeabdb88893e21000e2c21fbdc81d5d3d8f0b2e2da4839a6af99ab5c3f1aa675"
+      url "https://github.com/stchris/aleph-tui/releases/download/v0.3.0/aleph-tui-x86_64-apple-darwin.tar.xz"
+      sha256 "a89d7ea0af3f654081579c34b6d9c50230e41e36a601f206d22f35232786ecb9"
     end
   end
   on_linux do
     on_intel do
-      url "https://github.com/stchris/aleph-tui/releases/download/v0.2.0/aleph-tui-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "b4ebc2061bc0d66df7d6584b6c95c147ff5b93d3476e2f4f124c6dba10c70c4a"
+      url "https://github.com/stchris/aleph-tui/releases/download/v0.3.0/aleph-tui-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "2338804473a690a97fa758b45e0f6388d29a506b8ee577c9a71d5f2bfade96b6"
     end
   end
   license "GPL-3.0-or-later"
 
   def install
-    bin.install "aleph-tui"
+    on_macos do
+      on_arm do
+        bin.install "aleph-tui"
+      end
+    end
+    on_macos do
+      on_intel do
+        bin.install "aleph-tui"
+      end
+    end
+    on_linux do
+      on_intel do
+        bin.install "aleph-tui"
+      end
+    end
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
