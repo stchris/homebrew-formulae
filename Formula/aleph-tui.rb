@@ -1,20 +1,20 @@
 class AlephTui < Formula
   desc "A text user interface for Aleph"
   homepage "https://github.com/stchris/aleph-tui"
-  version "0.4.0"
+  version "0.4.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/stchris/aleph-tui/releases/download/v0.4.0/aleph-tui-aarch64-apple-darwin.tar.xz"
-      sha256 "7da9c641b6a6215c888922a4de8060c6f5f15e24f77da4087b522b4fcef3433f"
+      url "https://github.com/stchris/aleph-tui/releases/download/v0.4.1/aleph-tui-aarch64-apple-darwin.tar.xz"
+      sha256 "6688172210568287a90856c85d9d46d426ee809ad5c5e8ad88ab1bb4cf8aef51"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/stchris/aleph-tui/releases/download/v0.4.0/aleph-tui-x86_64-apple-darwin.tar.xz"
-      sha256 "5adf58a46421e50ba717c1e16f0255b5f4ff4ecd582ea38d7e24f8bd22305984"
+      url "https://github.com/stchris/aleph-tui/releases/download/v0.4.1/aleph-tui-x86_64-apple-darwin.tar.xz"
+      sha256 "970229b7e3ad165956cce25c438e604c1bb3edb1e1ff9316d653ce7c53bbb9a3"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/stchris/aleph-tui/releases/download/v0.4.0/aleph-tui-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "f634ac818a841b39411541756df8f37d9f4088437dac6c5f893daea9ea41ac50"
+    url "https://github.com/stchris/aleph-tui/releases/download/v0.4.1/aleph-tui-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "ce64af7e29d4e8c27097c305a254921a539a45b231a2f9394cb02ccf6cf2cb41"
   end
   license "GPL-3.0-or-later"
 
