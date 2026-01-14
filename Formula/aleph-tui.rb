@@ -1,28 +1,37 @@
 class AlephTui < Formula
   desc "A text user interface for Aleph"
   homepage "https://github.com/stchris/aleph-tui"
-  version "0.4.4"
+  version "0.5.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/stchris/aleph-tui/releases/download/v0.4.4/aleph-tui-aarch64-apple-darwin.tar.xz"
-      sha256 "7be544fffd14ec4449e3a2afafbe3e9fea749171f5a237be6dbd052f00d6fce7"
+      url "https://github.com/stchris/aleph-tui/releases/download/v0.5.0/aleph-tui-aarch64-apple-darwin.tar.xz"
+      sha256 "18bc2382862a47fe2b995da26e35cb8d1120acf3101c28e96528ee8ca5adf894"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/stchris/aleph-tui/releases/download/v0.4.4/aleph-tui-x86_64-apple-darwin.tar.xz"
-      sha256 "5b888ddfc4fe3076ec8a7a09f66415560cc24cc3c9d9b3f2343e897c7b7d07a2"
+      url "https://github.com/stchris/aleph-tui/releases/download/v0.5.0/aleph-tui-x86_64-apple-darwin.tar.xz"
+      sha256 "1cdf543dc2f2f07934061baaa668b3a4277234657d5080be91c525d38c22c16f"
     end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/stchris/aleph-tui/releases/download/v0.4.4/aleph-tui-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "3f1b1e6c407e1071bb99fb0874517113475eb9427898f9f68629ff414bfd1e73"
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/stchris/aleph-tui/releases/download/v0.5.0/aleph-tui-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "7340bcf0c4c2eaed3abcfe2a7d3f721b53bff3afdc5a35dd609cfbaf3d21864e"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/stchris/aleph-tui/releases/download/v0.5.0/aleph-tui-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "4e5661ba043a6587e8e7933150df3ad2c8918477c729d94892ae193efbf3bd6e"
+    end
   end
   license "GPL-3.0-or-later"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":     {},
-    "x86_64-apple-darwin":      {},
-    "x86_64-pc-windows-gnu":    {},
-    "x86_64-unknown-linux-gnu": {},
+    "aarch64-apple-darwin":              {},
+    "aarch64-unknown-linux-gnu":         {},
+    "x86_64-apple-darwin":               {},
+    "x86_64-pc-windows-gnu":             {},
+    "x86_64-unknown-linux-gnu":          {},
+    "x86_64-unknown-linux-musl-dynamic": {},
+    "x86_64-unknown-linux-musl-static":  {},
   }.freeze
 
   def target_triple
@@ -43,6 +52,7 @@ class AlephTui < Formula
   def install
     bin.install "aleph-tui" if OS.mac? && Hardware::CPU.arm?
     bin.install "aleph-tui" if OS.mac? && Hardware::CPU.intel?
+    bin.install "aleph-tui" if OS.linux? && Hardware::CPU.arm?
     bin.install "aleph-tui" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
