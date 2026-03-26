@@ -1,20 +1,20 @@
 class Sumdir < Formula
   desc "summarize a directory by file type frequency"
   homepage "https://github.com/stchris/sumdir"
-  version "0.4.1"
+  version "0.5.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/stchris/sumdir/releases/download/v0.4.1/sumdir-aarch64-apple-darwin.tar.xz"
-      sha256 "04f94dc407c08f77ae188dd2fb3b20be4c17a1b3e07315b9e35702719bed677e"
+      url "https://github.com/stchris/sumdir/releases/download/v0.5.1/sumdir-aarch64-apple-darwin.tar.xz"
+      sha256 "5d6b270fe2456895741c88d267926d203151e39041d51041d7b84715d96b929a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/stchris/sumdir/releases/download/v0.4.1/sumdir-x86_64-apple-darwin.tar.xz"
-      sha256 "a35568742409eaee2526834983e4cc55f9be18fd3f2406f861cc65e1ccac7659"
+      url "https://github.com/stchris/sumdir/releases/download/v0.5.1/sumdir-x86_64-apple-darwin.tar.xz"
+      sha256 "2be2d088cf6dcbd57887107e95d8a069513c5ed2839a2c12ce2a1d8fc3038a16"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-      url "https://github.com/stchris/sumdir/releases/download/v0.4.1/sumdir-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "3c9d01c82d4255f4c20633b21cbfd5de7143fb023a9a9207f1548547d8028102"
+    url "https://github.com/stchris/sumdir/releases/download/v0.5.1/sumdir-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "703104a1f56c811ef8b3eb2080157b8a43350bf0f3127535775e2a4248df5777"
   end
   license any_of: ["MIT", "Apache-2.0"]
 
