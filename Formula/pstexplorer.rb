@@ -1,25 +1,25 @@
 class Pstexplorer < Formula
   desc "A CLI tool to explore and extract data from Outlook PST files"
   homepage "https://github.com/stchris/pstexplorer"
-  version "0.4.0"
+  version "0.5.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/stchris/pstexplorer/releases/download/v0.4.0/pstexplorer-aarch64-apple-darwin.tar.xz"
-      sha256 "527276fbd3dbeacc50e0194c42002c5ac3b4f967e0a715238b513bf8a4fc75e6"
+      url "https://github.com/stchris/pstexplorer/releases/download/v0.5.0/pstexplorer-aarch64-apple-darwin.tar.xz"
+      sha256 "3e29efd82292101e6fee24f6ea93445d0a5a0b46daa8f4911be2fbc8286c9ed0"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/stchris/pstexplorer/releases/download/v0.4.0/pstexplorer-x86_64-apple-darwin.tar.xz"
-      sha256 "03d9ffd356c4bcf564256b357d081d183cc82c94995c25885a327f2493670f97"
+      url "https://github.com/stchris/pstexplorer/releases/download/v0.5.0/pstexplorer-x86_64-apple-darwin.tar.xz"
+      sha256 "1193fa2cd574636488ed070aed7ad5c20c4313809db576a3113e55fbc3b2acab"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/stchris/pstexplorer/releases/download/v0.4.0/pstexplorer-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "6b08eb03bd2baacf9f2a6e3ca9ecc31f6ed8355b2e67b32ca6d9dc431b56232f"
+      url "https://github.com/stchris/pstexplorer/releases/download/v0.5.0/pstexplorer-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "8de1f40dc4b075aeefe7a1293c412ec70e7e5c27fa313eb3bf0cd5d4d58b4123"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/stchris/pstexplorer/releases/download/v0.4.0/pstexplorer-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "d8258dd416f04431296eca5767ed3ade658987c89cf161fa1405ab7a099f30bd"
+      url "https://github.com/stchris/pstexplorer/releases/download/v0.5.0/pstexplorer-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "0c5e14e8c1cc31c9d497ceced27dc596895167522ad077f7dd0a9aa64c20a581"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
